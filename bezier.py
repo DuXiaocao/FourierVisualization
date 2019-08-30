@@ -53,6 +53,7 @@ if __name__ == '__main__':
         graph.append(bezier3(segm['points'], segm['num']))
     points = np.concatenate(graph)
     points = points
-    fourier_draw(points[:, 0], -points[:, 1])
+    ani = fourier_draw(points[:, 0], -points[:, 1])
+    ani.save('fourier.gif', writer='imagemagick', fps=25)
     plt.show()
 [[2,14], [67,-10], [92,-163], [100,-166]]
